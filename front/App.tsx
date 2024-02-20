@@ -1,21 +1,19 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function App() {
+import { RouteParams } from './navigation/types';
+import { RootNavigator } from './navigation/RootNavigator';
+
+const App: FunctionComponent = () => {
+  const initialRoute: keyof RouteParams = 'Home';
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <NavigationContainer>
+      <RootNavigator initialRoute={initialRoute} />
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
