@@ -62,6 +62,12 @@ export const homeFormStyle = StyleSheet.create({
     fontFamily: RalewayMedium,
     textAlign: 'center',
     color: yellow,
-    alignItems: 'baseline',
+  },
+  forgotPasswordBtn: {
+    fontSize: fontButton,
+    fontFamily: RalewayMedium,
+    textAlign: 'center',
+    color: yellow,
+    marginTop: -20,
   },
 });

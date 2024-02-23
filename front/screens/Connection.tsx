@@ -9,7 +9,19 @@ import { homeFormStyle as styles } from '../styles/screens/homeFormStyle';
 import { PATH } from '../constants/Enums';
 
 const { CONNEXION } = PATH;
-const { title, subtitle, input, button, textBtn, textGobackBtn, bgImage, buttonContainer, form, gobackButton } = styles;
+const {
+  title,
+  subtitle,
+  input,
+  button,
+  textBtn,
+  textGobackBtn,
+  bgImage,
+  buttonContainer,
+  form,
+  gobackButton,
+  forgotPasswordBtn,
+} = styles;
 
 const Connexion: FunctionComponent = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
@@ -24,6 +36,9 @@ const Connexion: FunctionComponent = () => {
       <View style={form}>
         <TextInput style={input} placeholderTextColor={'grey'} placeholder="Email" />
         <TextInput style={input} placeholderTextColor={'grey'} placeholder="Mot de passe" />
+        <TouchableOpacity style={gobackButton} onPress={() => navigation.goBack()}>
+          <Text style={forgotPasswordBtn}>Mot de passe oublié ? &#62;&#62;</Text>
+        </TouchableOpacity>
       </View>
 
       <View style={buttonContainer}>
