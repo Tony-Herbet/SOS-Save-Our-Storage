@@ -9,6 +9,7 @@ import BackgroundContainer from '../components/BackgroundContainer';
 import { PATH } from '../constants/Enums';
 import { homeFormStyle as styles } from '../styles/screens/homeFormStyle';
 import { setEmail, setPassword, setIsPasswordHidden, resetForm } from '../redux/reducers/connection';
+import Eyes from '../components/SVG/Eyes';
 
 const { CONNEXION } = PATH;
 const {
@@ -58,7 +59,7 @@ const Connexion: FunctionComponent = () => {
 
         <View style={passwordView}>
           <TouchableOpacity style={eyesIconCtn} onPress={() => dispatch(setIsPasswordHidden())}>
-            <Image style={eyesIcon} source={require('../assets/images/eyes.png')} />
+            <Eyes height={eyesIcon.height} width={eyesIcon.width} />
           </TouchableOpacity>
           <TextInput
             style={input}
