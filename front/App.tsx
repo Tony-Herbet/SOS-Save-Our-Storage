@@ -6,6 +6,8 @@ import * as SplashScreen from 'expo-splash-screen';
 
 import { RouteParams } from './navigation/types';
 import { RootNavigator } from './navigation/RootNavigator';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -35,10 +37,12 @@ const App: FunctionComponent = () => {
   onLayoutRootView();
 
   return (
-    <NavigationContainer>
-      <RootNavigator initialRoute={initialRoute} />
-      <StatusBar style="auto" />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <RootNavigator initialRoute={initialRoute} />
+        <StatusBar style="auto" />
+      </NavigationContainer>
+    </Provider>
   );
 };
 

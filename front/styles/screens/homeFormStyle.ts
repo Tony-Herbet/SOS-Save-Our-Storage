@@ -39,6 +39,19 @@ export const homeFormStyle = StyleSheet.create({
     paddingHorizontal: 10,
     marginVertical: 10,
   },
+  passwordView: {
+    position: 'relative',
+  },
+  eyesIconCtn: {
+    position: 'absolute',
+    top: 15,
+    right: 8,
+    zIndex: 1,
+  },
+  eyesIcon: {
+    width: 30,
+    height: 30,
+  },
   buttonContainer: {
     alignItems: 'center',
   },
@@ -68,6 +81,5 @@ export const homeFormStyle = StyleSheet.create({
     fontFamily: RalewayMedium,
     textAlign: 'center',
     color: yellow,
-    marginTop: -20,
   },
 });
