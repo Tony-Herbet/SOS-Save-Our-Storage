@@ -5,6 +5,7 @@ import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 import { RouteParams } from '../navigation/types';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 
+import Eyes from '../components/SVG/Eyes';
 import BackgroundContainer from '../components/BackgroundContainer';
 import { homeFormStyle as styles } from '../styles/screens/homeFormStyle';
 import { PATH } from '../constants/Enums';
@@ -83,7 +84,7 @@ const Inscription: FunctionComponent = () => {
         />
         <View style={passwordView}>
           <TouchableOpacity style={eyesIconCtn} onPress={() => dispatch(setIsPasswordHidden())}>
-            <Image style={eyesIcon} source={require('../assets/images/eyes.png')} />
+            <Eyes height={eyesIcon.height} width={eyesIcon.width} />
           </TouchableOpacity>
           <TextInput
             style={input}
@@ -97,7 +98,7 @@ const Inscription: FunctionComponent = () => {
         </View>
         <View style={passwordView}>
           <TouchableOpacity style={eyesIconCtn} onPress={() => dispatch(setIsConfirmPasswordHidden())}>
-            <Image style={eyesIcon} source={require('../assets/images/eyes.png')} />
+            <Eyes height={eyesIcon.height} width={eyesIcon.width} />
           </TouchableOpacity>
           <TextInput
             style={input}
