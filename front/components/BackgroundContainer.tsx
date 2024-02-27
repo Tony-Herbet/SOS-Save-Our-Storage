@@ -1,8 +1,8 @@
 import { FunctionComponent, ReactNode } from 'react';
 import { View, ImageBackground, ViewStyle, ImageStyle } from 'react-native';
 
-import { backgroundContainerStyle as styles } from '../styles/components/backgroundContainerStyle';
-import { PATH } from '../constants/Enums';
+import { backgroundContainerStyle as styles } from 'styles/components/backgroundContainerStyle';
+import { PATH } from 'constants/Enums';
 
 interface BackgroundContainerProps {
   children: ReactNode;

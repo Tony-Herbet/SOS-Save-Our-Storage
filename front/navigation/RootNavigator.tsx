@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { RouteParams } from './types';
-import Home from '../screens/Home';
-import Connection from '../screens/Connection';
-import Inscription from '../screens/Inscription';
+import { RouteParams } from 'navigation/types';
+import Home from 'screens/Home';
+import Connection from 'screens/Connection';
+import Inscription from 'screens/Inscription';
 
 interface RootNavigator {
   initialRoute: keyof RouteParams;

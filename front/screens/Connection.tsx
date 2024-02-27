@@ -1,15 +1,15 @@
 import { FunctionComponent } from 'react';
-import { View, Text, TouchableOpacity, TextInput, Image } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
-import { RouteParams } from '../navigation/types';
-import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { RouteParams } from 'navigation/types';
+import { useAppDispatch, useAppSelector } from 'redux/hooks';
 
-import BackgroundContainer from '../components/BackgroundContainer';
-import { PATH } from '../constants/Enums';
-import { homeFormStyle as styles } from '../styles/screens/homeFormStyle';
-import { setEmail, setPassword, setIsPasswordHidden, resetForm } from '../redux/reducers/connection';
-import Eyes from '../components/SVG/Eyes';
+import BackgroundContainer from 'components/BackgroundContainer';
+import { PATH } from 'constants/Enums';
+import { homeFormStyle as styles } from 'styles/screens/homeFormStyle';
+import { setEmail, setPassword, setIsPasswordHidden, resetForm } from 'redux/reducers/connection';
+import Eyes from 'components/SVG/Eyes';
 
 const { CONNEXION } = PATH;
 const {
