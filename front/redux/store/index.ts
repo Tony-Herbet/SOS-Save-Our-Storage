@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import connectionReducer from '../reducers/connection';
-import inscriptionReducer from '../reducers/inscription';
+import connectionReducer from 'redux/reducers/connection';
+import inscriptionReducer from 'redux/reducers/inscription';
 
 const store = configureStore({
   reducer: {

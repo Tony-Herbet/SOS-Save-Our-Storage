@@ -2,13 +2,13 @@ import { FunctionComponent } from 'react';
 import { View, Text, TouchableOpacity, TextInput, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
-import { RouteParams } from '../navigation/types';
-import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { RouteParams } from 'navigation/types';
+import { useAppDispatch, useAppSelector } from 'redux/hooks';
 
-import Eyes from '../components/SVG/Eyes';
-import BackgroundContainer from '../components/BackgroundContainer';
-import { homeFormStyle as styles } from '../styles/screens/homeFormStyle';
-import { PATH } from '../constants/Enums';
+import Eyes from 'components/SVG/Eyes';
+import BackgroundContainer from 'components/BackgroundContainer';
+import { homeFormStyle as styles } from 'styles/screens/homeFormStyle';
+import { PATH } from 'constants/Enums';
 const { CONNEXION } = PATH;
 import {
   setFirstname,
@@ -19,7 +19,7 @@ import {
   setIsPasswordHidden,
   setIsConfirmPasswordHidden,
   resetForm,
-} from '../redux/reducers/inscription';
+} from 'redux/reducers/inscription';
 
 const {
   title,

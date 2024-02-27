@@ -3,10 +3,10 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 
-import BackgroundContainer from '../components/BackgroundContainer';
-import { homeStyle as styles } from '../styles/screens/homeStyle';
-import { PATH } from '../constants/Enums';
-import { RouteParams } from '../navigation/types';
+import BackgroundContainer from 'components/BackgroundContainer';
+import { homeStyle as styles } from 'styles/screens/homeStyle';
+import { PATH } from 'constants/Enums';
+import { RouteParams } from 'navigation/types';
 
 const { HOME } = PATH;
 const { title, subtitle, button, textBtn, bgImage, titleContainer, buttonContainer } = styles;
