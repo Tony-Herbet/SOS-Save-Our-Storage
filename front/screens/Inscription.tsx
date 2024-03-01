@@ -9,7 +9,7 @@ import Eyes from 'components/SVG/Eyes';
 import BackgroundContainer from 'components/BackgroundContainer';
 import { homeFormStyle as styles } from 'styles/screens/homeFormStyle';
 import { PATH } from 'constants/Enums';
-const { CONNEXION } = PATH;
+const { INSCRIPTION } = PATH;
 import {
   setFirstname,
   setLastname,
@@ -50,7 +50,7 @@ const Inscription: FunctionComponent = () => {
   };
 
   return (
-    <BackgroundContainer location={CONNEXION} imageStyles={bgImage}>
+    <BackgroundContainer location={INSCRIPTION} imageStyles={bgImage}>
       <View>
         <Text style={title}>S.O.S.</Text>
         <Text style={subtitle}>"Save Our Storage"</Text>

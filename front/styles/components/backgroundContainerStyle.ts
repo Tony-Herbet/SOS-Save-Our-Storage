@@ -10,6 +10,5 @@ export const backgroundContainerStyle = StyleSheet.create({
   },
   viewContainer: {
     width: '100%',
-    paddingLeft: 30,
   },
 });

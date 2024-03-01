@@ -12,8 +12,8 @@ export const homeStyle = StyleSheet.create({
   bgImage: {
     justifyContent: 'center',
     alignItems: 'center',
+    paddingLeft: 30,
   },
-  titleContainer: {},
   title: {
     fontFamily: RobotoBold,
     fontSize: fontTitleHome,

@@ -11,7 +11,7 @@ import { homeFormStyle as styles } from 'styles/screens/homeFormStyle';
 import { setEmail, setPassword, setIsPasswordHidden, resetForm } from 'redux/reducers/connection';
 import Eyes from 'components/SVG/Eyes';
 
-const { CONNEXION } = PATH;
+const { CONNECTION } = PATH;
 const {
   title,
   subtitle,
@@ -29,7 +29,7 @@ const {
   eyesIcon,
 } = styles;
 
-const Connexion: FunctionComponent = () => {
+const Connection: FunctionComponent = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
 
   const dispatch = useAppDispatch();
@@ -40,8 +40,12 @@ const Connexion: FunctionComponent = () => {
     navigation.goBack();
   };
 
+  const handleConnection = () => {
+    navigation.navigate('Storage');
+  };
+
   return (
-    <BackgroundContainer location={CONNEXION} imageStyles={bgImage}>
+    <BackgroundContainer location={CONNECTION} imageStyles={bgImage}>
       <View>
         <Text style={title}>S.O.S.</Text>
         <Text style={subtitle}>"Save Our Storage"</Text>
@@ -77,7 +81,7 @@ const Connexion: FunctionComponent = () => {
       </View>
 
       <View style={buttonContainer}>
-        <TouchableOpacity style={button}>
+        <TouchableOpacity style={button} onPress={handleConnection}>
           <Text style={textBtn}>Me connecter</Text>
         </TouchableOpacity>
         <TouchableOpacity style={gobackButton} onPress={handleBack}>
@@ -88,4 +92,4 @@ const Connexion: FunctionComponent = () => {
   );
 };
 
-export default Connexion;
+export default Connection;

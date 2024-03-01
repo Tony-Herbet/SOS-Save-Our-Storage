@@ -4,6 +4,7 @@ export type RouteParams = {
   Home: undefined;
   Connection: undefined;
   Inscription: undefined;
+  Storage: undefined;
 };
 
 export interface NavigatorModel {

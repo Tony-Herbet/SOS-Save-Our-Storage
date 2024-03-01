@@ -11,7 +11,7 @@ interface BackgroundContainerProps {
   location?: string;
 }
 
-const { HOME, CONNEXION } = PATH;
+const { HOME, CONNECTION, INSCRIPTION } = PATH;
 
 const BackgroundContainer: FunctionComponent<BackgroundContainerProps> = ({
   children,
@@ -25,9 +25,11 @@ const BackgroundContainer: FunctionComponent<BackgroundContainerProps> = ({
       source={
         location === HOME
           ? require('../assets/images/background-home-bags.webp')
-          : location === CONNEXION
+          : location === CONNECTION
             ? require('../assets/images/background-home.webp')
-            : require('../assets/images/background.webp')
+            : location === INSCRIPTION
+              ? require('../assets/images/background-home.webp')
+              : require('../assets/images/background.webp')
       }
       resizeMode="stretch" // to work, resizeMode should be here and not in StyleSheet
     >

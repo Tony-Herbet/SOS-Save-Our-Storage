@@ -13,6 +13,7 @@ export const homeFormStyle = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
+    paddingLeft: 30,
   },
   title: {
     fontFamily: RobotoBold,
