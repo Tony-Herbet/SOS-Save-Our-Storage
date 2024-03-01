@@ -19,7 +19,7 @@ const App: FunctionComponent = () => {
     'Raleway-Regular': require('assets/fonts/Raleway/Raleway-Regular.ttf'),
     'Raleway-Medium': require('assets/fonts/Raleway/Raleway-Medium.ttf'),
     'Raleway-Bold': require('assets/fonts/Raleway/Raleway-Bold.ttf'),
-    'Roboto-Regular': require('assets/fonts/Roboto/Roboto-Regular.ttf'),
+    'Roboto-Regular': require('assets/fonts/Roboto/Roboto-Regular.ttf'), // only titles
     'Roboto-Medium': require('assets/fonts/Roboto/Roboto-Medium.ttf'),
     'Roboto-Bold': require('assets/fonts/Roboto/Roboto-Bold.ttf'),
   });

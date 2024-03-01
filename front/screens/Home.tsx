@@ -9,14 +9,14 @@ import { PATH } from 'constants/Enums';
 import { RouteParams } from 'navigation/types';
 
 const { HOME } = PATH;
-const { title, subtitle, button, textBtn, bgImage, titleContainer, buttonContainer } = styles;
+const { title, subtitle, button, textBtn, bgImage, buttonContainer } = styles;
 
 const Home: FunctionComponent = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
 
   return (
     <BackgroundContainer location={HOME} imageStyles={bgImage}>
-      <View style={titleContainer}>
+      <View>
         <Text style={title}>S.O.S.</Text>
         <Text style={subtitle}>"Save Our Storage"</Text>
       </View>

@@ -12,6 +12,7 @@ interface BackgroundContainerProps {
 }
 
 const { HOME, CONNECTION, INSCRIPTION } = PATH;
+const { container, image, viewContainer } = styles;
 
 const BackgroundContainer: FunctionComponent<BackgroundContainerProps> = ({
   children,
@@ -19,9 +20,9 @@ const BackgroundContainer: FunctionComponent<BackgroundContainerProps> = ({
   imageStyles,
   location,
 }) => (
-  <View style={{ ...styles.container, ...viewStyles }}>
+  <View style={{ ...container, ...viewStyles }}>
     <ImageBackground
-      style={{ ...styles.image, ...imageStyles }}
+      style={{ ...image, ...imageStyles }}
       source={
         location === HOME
           ? require('../assets/images/background-home-bags.webp')
@@ -33,7 +34,7 @@ const BackgroundContainer: FunctionComponent<BackgroundContainerProps> = ({
       }
       resizeMode="stretch" // to work, resizeMode should be here and not in StyleSheet
     >
-      <View style={styles.viewContainer}>{children}</View>
+      <View style={viewContainer}>{children}</View>
     </ImageBackground>
   </View>
 );

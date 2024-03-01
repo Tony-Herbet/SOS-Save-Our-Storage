@@ -5,7 +5,7 @@ import { RouteParams } from 'navigation/types';
 import Home from 'screens/Home';
 import Connection from 'screens/Connection';
 import Inscription from 'screens/Inscription';
-import Storage from 'screens/Storage';
+import Storage from 'screens/StorageList';
 
 interface RootNavigator {
   initialRoute: keyof RouteParams;
