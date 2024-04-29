@@ -9,7 +9,7 @@ const { yellow, white } = COLORS;
 const { fontTitleHome, fontTitle, fontButton, borderRadius } = SIZES;
 
 export const homeFormStyle = StyleSheet.create({
-  bgImage: {
+  backgroundContainerImage: {
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,

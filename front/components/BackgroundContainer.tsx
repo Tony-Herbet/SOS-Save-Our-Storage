@@ -6,8 +6,8 @@ import { PATH } from 'constants/Enums';
 
 interface BackgroundContainerProps {
   children: ReactNode;
-  viewStyles?: ViewStyle;
-  imageStyles?: ImageStyle;
+  backgroundContainerViewStyles?: ViewStyle;
+  backgroundContainerImageStyles?: ImageStyle;
   location?: string;
 }
 
@@ -16,13 +16,13 @@ const { container, image, viewContainer } = styles;
 
 const BackgroundContainer: FunctionComponent<BackgroundContainerProps> = ({
   children,
-  viewStyles,
-  imageStyles,
+  backgroundContainerViewStyles,
+  backgroundContainerImageStyles,
   location,
 }) => (
-  <View style={{ ...container, ...viewStyles }}>
+  <View style={{ ...container, ...backgroundContainerViewStyles }}>
     <ImageBackground
-      style={{ ...image, ...imageStyles }}
+      style={{ ...image, ...backgroundContainerImageStyles }}
       source={
         location === HOME
           ? require('../assets/images/background-home-bags.webp')

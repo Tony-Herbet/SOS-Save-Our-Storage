@@ -6,6 +6,7 @@ import Home from 'screens/Home';
 import Connection from 'screens/Connection';
 import Inscription from 'screens/Inscription';
 import Storage from 'screens/StorageList';
+import AddStorage from 'screens/AddStorage';
 
 interface RootNavigator {
   initialRoute: keyof RouteParams;
@@ -25,6 +26,7 @@ export const RootNavigator: FunctionComponent<RootNavigator> = ({ initialRoute }
       <Stack.Screen name="Connection" component={Connection} />
       <Stack.Screen name="Inscription" component={Inscription} />
       <Stack.Screen name="Storage" component={Storage} />
+      <Stack.Screen name="AddStorage" component={AddStorage} />
     </Stack.Navigator>
   );
 };

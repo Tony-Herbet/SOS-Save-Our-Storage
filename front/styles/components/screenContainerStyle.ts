@@ -6,16 +6,20 @@ const { RobotoBold } = FONTS;
 const { fontTitle, fontSubtitle } = SIZES;
 
 export const screenContainerStyle = StyleSheet.create({
-  bgImage: {
+  backgroundContainerImage: {
+    flex: 1,
     alignItems: 'center',
-    paddingVertical: 50,
+    paddingTop: 50,
     paddingLeft: 55,
     paddingRight: 70,
     justifyContent: 'space-between',
+    position: 'relative',
   },
-  styleContainer: {
+  titleStyleContainer: {
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    height: '10%',
+    marginBottom: 15
   },
   styleTitle: {
     fontFamily: RobotoBold,
@@ -25,7 +29,7 @@ export const screenContainerStyle = StyleSheet.create({
   styleSubtitle: {
     fontSize: fontSubtitle,
   },
-  chlidrenContainerStyle: {
+  childrenContainerStyle: {
     marginTop: 18,
   },
 });

@@ -28,7 +28,7 @@ const {
   button,
   textBtn,
   textGobackBtn,
-  bgImage,
+  backgroundContainerImage,
   buttonContainer,
   form,
   gobackButton,
@@ -50,7 +50,7 @@ const Inscription: FunctionComponent = () => {
   };
 
   return (
-    <BackgroundContainer location={INSCRIPTION} imageStyles={bgImage}>
+    <BackgroundContainer location={INSCRIPTION} backgroundContainerImageStyles={backgroundContainerImage}>
       <View>
         <Text style={title}>S.O.S.</Text>
         <Text style={subtitle}>"Save Our Storage"</Text>

@@ -19,7 +19,7 @@ const {
   button,
   textBtn,
   textGobackBtn,
-  bgImage,
+  backgroundContainerImage,
   buttonContainer,
   form,
   gobackButton,
@@ -45,7 +45,7 @@ const Connection: FunctionComponent = () => {
   };
 
   return (
-    <BackgroundContainer location={CONNECTION} imageStyles={bgImage}>
+    <BackgroundContainer location={CONNECTION} backgroundContainerImageStyles={backgroundContainerImage}>
       <View>
         <Text style={title}>S.O.S.</Text>
         <Text style={subtitle}>"Save Our Storage"</Text>
