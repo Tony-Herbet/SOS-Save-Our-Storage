@@ -10,6 +10,9 @@ interface TouchableDividerProps {
   dividerText: string;
   dividerTextStyle: TextStyle;
   textContainerStyle: ViewStyle;
+  dividerType: string;
+  svgWidth?: number;
+  svgHeight?: number;
 }
 
 const TouchableDivider: FunctionComponent<TouchableDividerProps> = ({
@@ -19,6 +22,9 @@ const TouchableDivider: FunctionComponent<TouchableDividerProps> = ({
   dividerText,
   dividerTextStyle,
   textContainerStyle,
+  dividerType,
+  svgWidth,
+  svgHeight,
 }) => {
   return (
     <TouchableOpacity activeOpacity={0.9} style={touchableStyle} onPress={handleOnPress}>
@@ -27,6 +33,9 @@ const TouchableDivider: FunctionComponent<TouchableDividerProps> = ({
         dividerText={dividerText}
         dividerTextStyle={dividerTextStyle}
         textContainerStyle={textContainerStyle}
+        dividerType={dividerType}
+        svgWidth={svgWidth}
+        svgHeight={svgHeight}
       />
     </TouchableOpacity>
   );

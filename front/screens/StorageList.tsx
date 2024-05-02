@@ -44,6 +44,7 @@ const StorageList: FunctionComponent = () => {
         handleOnPress={handleAddStorage}
         touchableStyle={touchableStyle}
         textContainerStyle={textContainerStyle}
+        dividerType="full"
       />
     </ScreenContainer>
   );

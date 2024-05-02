@@ -4,7 +4,7 @@ export type RouteParams = {
   Home: undefined;
   Connection: undefined;
   Inscription: undefined;
-  Storage: undefined;
+  StorageList: undefined;
   AddStorage: undefined;
 };
 

@@ -12,14 +12,14 @@ const AddStorage: FunctionComponent = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
 
   const handleBackToStorageList = () => {
-    navigation.navigate('Storage');
+    navigation.navigate('StorageList');
   };
 
   return (
     <ScreenContainer title="Add storage">
       <View style={container}>
         <TouchableOpacity style={{ marginBottom: 10 }} onPress={handleBackToStorageList}>
-          <Text style={text}>&bull; temporary for testing</Text>
+          <Text style={text}>&bull; temporary go back for testing</Text>
         </TouchableOpacity>
       </View>
     </ScreenContainer>

@@ -2,6 +2,7 @@ import { FunctionComponent, ReactNode } from 'react';
 import { View, Text } from 'react-native';
 import BackgroundContainer from 'components/BackgroundContainer';
 import { screenContainerStyle as styles } from 'styles/components/screenContainerStyle';
+import NavContainer from './NavContainer';
 
 const { backgroundContainerImage, titleStyleContainer, styleTitle, styleSubtitle, childrenContainerStyle } = styles;
 
@@ -23,6 +24,7 @@ const ScreenContainer: FunctionComponent<ScreenContainerProps> = ({ children, ti
       </View>
       <View style={childrenContainerStyle}>{mainContent}</View>
       {divider}
+      <NavContainer />
     </BackgroundContainer>
   );
 };

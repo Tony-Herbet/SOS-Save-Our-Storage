@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 import { RouteParams } from 'navigation/types';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useAppDispatch, useAppSelector } from 'redux/hooks';
 
 import BackgroundContainer from 'components/BackgroundContainer';
@@ -41,7 +41,11 @@ const Connection: FunctionComponent = () => {
   };
 
   const handleConnection = () => {
-    navigation.navigate('Storage');
+    navigation.navigate('StorageList');
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'StorageList' }], // Replace once done
+    });
   };
 
   return (
