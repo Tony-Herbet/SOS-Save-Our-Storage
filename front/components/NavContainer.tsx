@@ -3,8 +3,18 @@ import { View } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 
+import { navContainerStyle as styles } from 'styles/components/navContainerStyle';
 import TouchableDivider from './TouchableDivider';
 import { RouteParams } from 'navigation/types';
+import { COLORS } from 'constants/Colors';
+import { PATH } from 'constants/Enums';
+import { SIZES } from 'constants/Sizes';
+import { FONTS } from 'constants/Fonts';
+
+const { yellow, green, red, blue, pink, purple, orange } = COLORS;
+const { GOBACK, STORAGELIST } = PATH;
+const { fontDivider, fontDividerGoBack } = SIZES;
+const { touchableStyle, dividerTextStyle, textContainerStyle } = styles;
 
 interface NavContainerProps {}
 
@@ -12,23 +22,24 @@ const NavContainer: FunctionComponent<NavContainerProps> = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
   const route = useRoute();
 
+  const storageName = route.name === STORAGELIST ? 'Rangements' : GOBACK; // TODO change for the route.name screen for one storage
+
   const tabOptions: Array<{ name: string; color: string }> = [
-    { name: 'Rangements', color: 'red' },
-    { name: 'Produits', color: 'blue' },
-    { name: 'Dates', color: 'pink' },
-    { name: 'Courses', color: 'green' },
-    { name: 'Membres', color: 'yellow' },
-    { name: 'Foyers', color: 'grey' },
-    { name: 'Profil', color: 'white' },
+    { name: storageName, color: yellow },
+    { name: 'Produits', color: green },
+    { name: 'Dates', color: red },
+    { name: 'Courses', color: blue },
+    { name: 'Foyers', color: pink },
+    { name: 'Membres', color: purple },
+    { name: 'Profil', color: orange },
   ];
 
   return (
     <View
       style={{
-        justifyContent: 'space-between',
-        height: '85%',
+        height: 700,
         position: 'absolute',
-        right: -100,
+        right: -82,
         top: 0,
       }}
     >
@@ -42,25 +53,17 @@ const NavContainer: FunctionComponent<NavContainerProps> = () => {
               navigation.goBack();
             }
           }}
-          touchableStyle={{
-            // height: 100,
-            width: 'auto',
-            transform: [{ rotate: '-90deg' }],
-          }}
+          touchableStyle={touchableStyle}
           dividerColor={tab.color}
-          dividerText={tab.name}
+          dividerText={tab.name === GOBACK ? '↶' : tab.name}
           dividerTextStyle={{
-            width: '100%',
-            height: 'auto',
-            textAlign: 'center',
-            transform: [{ rotate: '180deg' }],
+            ...dividerTextStyle,
+            marginTop: tab.name === GOBACK ? 35 : 25,
+            fontSize: tab.name === GOBACK ? fontDividerGoBack : fontDivider,
           }}
-          textContainerStyle={{
-            width: '100%',
-            height: '100%',
-          }}
-          dividerType={index === 3 || index === 5 || index === 2 ? 'full' : 'half'}
-          svgWidth={index === 3 || index === 5 || index === 2 ? 75 : 150}
+          textContainerStyle={textContainerStyle}
+          dividerType={index === 0 ? 'full' : 'half'}
+          svgWidth={index === 0 ? 110 : 90}
         />
       ))}
     </View>

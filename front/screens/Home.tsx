@@ -8,7 +8,7 @@ import { homeStyle as styles } from 'styles/screens/homeStyle';
 import { PATH } from 'constants/Enums';
 import { RouteParams } from 'navigation/types';
 
-const { HOME } = PATH;
+const { HOME, INSCRIPTION, CONNECTION } = PATH;
 const { title, subtitle, button, textBtn, backgroundContainerImage, buttonContainer } = styles;
 
 const Home: FunctionComponent = () => {
@@ -22,10 +22,10 @@ const Home: FunctionComponent = () => {
       </View>
 
       <View style={buttonContainer}>
-        <TouchableOpacity style={button} onPress={() => navigation.navigate('Inscription')}>
+        <TouchableOpacity style={button} onPress={() => navigation.navigate(INSCRIPTION)}>
           <Text style={textBtn}>M'inscrire</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={button} onPress={() => navigation.navigate('Connection')}>
+        <TouchableOpacity style={button} onPress={() => navigation.navigate(CONNECTION)}>
           <Text style={textBtn}>Me connecter</Text>
         </TouchableOpacity>
       </View>

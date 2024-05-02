@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native';
 
+import { FONTS } from '../../constants/Fonts';
 import { SIZES } from 'constants/Sizes';
 
-const { fontText, lineHeightText } = SIZES;
+const { fontText, lineHeightText, fontDivider } = SIZES;
+const { RobotoBold, RalewayMedium, RalewayBold } = FONTS;
 
 export const storageListStyle = StyleSheet.create({
   viewContainer: {
@@ -14,19 +16,20 @@ export const storageListStyle = StyleSheet.create({
     lineHeight: lineHeightText,
   },
   touchableStyle: {
-    height: 100,
-    width: 150,
     position: 'absolute',
-    bottom: 6,
-    left: '20%',
+    bottom: 3,
+    left: '25%',
   },
   dividerTextStyle: {
     width: '70%',
     height: 'auto',
     textAlign: 'center',
+    fontSize: fontDivider,
+    fontFamily: RalewayBold,
+    marginTop: 15,
   },
   textContainerStyle: {
-    width: 150,
-    height: 100,
+    width: '100%',
+    height: '100%',
   },
 });

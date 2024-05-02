@@ -11,7 +11,7 @@ import { homeFormStyle as styles } from 'styles/screens/homeFormStyle';
 import { setEmail, setPassword, setIsPasswordHidden, resetForm } from 'redux/reducers/connection';
 import Eyes from 'components/SVG/Eyes';
 
-const { CONNECTION } = PATH;
+const { CONNECTION, STORAGELIST } = PATH;
 const {
   title,
   subtitle,
@@ -41,10 +41,10 @@ const Connection: FunctionComponent = () => {
   };
 
   const handleConnection = () => {
-    navigation.navigate('StorageList');
+    navigation.navigate(STORAGELIST);
     navigation.reset({
       index: 0,
-      routes: [{ name: 'StorageList' }], // Replace once done
+      routes: [{ name: STORAGELIST }], // Replace once done
     });
   };
 

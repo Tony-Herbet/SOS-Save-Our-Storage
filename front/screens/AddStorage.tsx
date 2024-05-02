@@ -5,14 +5,14 @@ import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 import { RouteParams } from 'navigation/types';
 import ScreenContainer from 'components/ScreenContainer';
 import { addStorageStyle as styles } from 'styles/screens/addStorageStyle';
-
+import { PATH } from 'constants/Enums';
 const { text, container } = styles;
 
 const AddStorage: FunctionComponent = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
 
   const handleBackToStorageList = () => {
-    navigation.navigate('StorageList');
+    navigation.navigate(PATH.STORAGELIST);
   };
 
   return (

@@ -12,7 +12,7 @@ import store from 'redux/store';
 SplashScreen.preventAutoHideAsync();
 
 const App: FunctionComponent = () => {
-  const initialRoute: keyof RouteParams = 'Home';
+  const initialRoute: keyof RouteParams = 'HOME';
 
   // fonts import and declaration
   const [fontsLoaded, fontError] = useFonts({

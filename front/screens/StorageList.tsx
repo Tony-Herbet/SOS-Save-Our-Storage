@@ -6,6 +6,7 @@ import { RouteParams } from 'navigation/types';
 import ScreenContainer from 'components/ScreenContainer';
 import { storageListStyle as styles } from 'styles/screens/storageListStyle';
 import { COLORS } from 'constants/Colors';
+import { PATH } from 'constants/Enums';
 import TouchableDivider from 'components/TouchableDivider';
 
 const { textStorageStyle, viewContainer, touchableStyle, dividerTextStyle, textContainerStyle } = styles;
@@ -14,7 +15,7 @@ const StorageList: FunctionComponent = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
 
   const handleAddStorage = () => {
-    navigation.navigate('AddStorage');
+    navigation.navigate(PATH.ADDSTORAGE);
   };
 
   return (

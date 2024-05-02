@@ -1,18 +1,17 @@
 import { FunctionComponent } from 'react';
-import { TouchableOpacity, TextStyle, ViewStyle } from 'react-native';
+import { TouchableOpacity, TextStyle, ViewStyle, StyleProp } from 'react-native';
 
 import Divider from 'components/SVG/Divider';
 
 interface TouchableDividerProps {
   handleOnPress: () => void;
-  touchableStyle: TextStyle;
+  touchableStyle: StyleProp<ViewStyle>;
   dividerColor: string;
   dividerText: string;
   dividerTextStyle: TextStyle;
   textContainerStyle: ViewStyle;
   dividerType: string;
   svgWidth?: number;
-  svgHeight?: number;
 }
 
 const TouchableDivider: FunctionComponent<TouchableDividerProps> = ({
@@ -24,7 +23,6 @@ const TouchableDivider: FunctionComponent<TouchableDividerProps> = ({
   textContainerStyle,
   dividerType,
   svgWidth,
-  svgHeight,
 }) => {
   return (
     <TouchableOpacity activeOpacity={0.9} style={touchableStyle} onPress={handleOnPress}>
@@ -35,7 +33,6 @@ const TouchableDivider: FunctionComponent<TouchableDividerProps> = ({
         textContainerStyle={textContainerStyle}
         dividerType={dividerType}
         svgWidth={svgWidth}
-        svgHeight={svgHeight}
       />
     </TouchableOpacity>
   );
