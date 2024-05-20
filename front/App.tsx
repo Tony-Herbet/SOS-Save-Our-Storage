@@ -1,5 +1,6 @@
 import { FunctionComponent, useCallback } from 'react';
-import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, View } from 'react-native';
+import { StatusBar as StatusBarExpo } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -9,6 +10,7 @@ import { RootNavigator } from 'navigation/RootNavigator';
 import { Provider } from 'react-redux';
 import store from 'redux/store';
 import { PATH } from 'constants/Enums';
+import { appStyle as styles } from 'styles/components/appStyle';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -39,10 +41,12 @@ const App: FunctionComponent = () => {
 
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <RootNavigator initialRoute={initialRoute} />
-        <StatusBar style="auto" />
-      </NavigationContainer>
+      <View style={styles.barStyle}>
+        <NavigationContainer>
+          <RootNavigator initialRoute={initialRoute} />
+          <StatusBarExpo style="light" />
+        </NavigationContainer>
+      </View>
     </Provider>
   );
 };

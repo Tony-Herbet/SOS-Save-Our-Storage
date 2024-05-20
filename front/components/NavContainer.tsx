@@ -13,7 +13,7 @@ import { SIZES } from 'constants/Sizes';
 const { yellow, green, red, blue, pink, purple, orange } = COLORS;
 const { GOBACK, STORAGE } = PATH;
 const { fontDivider, fontDividerGoBack } = SIZES;
-const { touchableStyle, dividerTextStyle, textContainerStyle } = styles;
+const { navContainer, touchableStyle, dividerTextStyle, textContainerStyle } = styles;
 
 interface NavContainerProps {}
 
@@ -34,14 +34,7 @@ const NavContainer: FunctionComponent<NavContainerProps> = () => {
   ];
 
   return (
-    <View
-      style={{
-        height: 700,
-        position: 'absolute',
-        right: -82,
-        top: 0,
-      }}
-    >
+    <View style={navContainer}>
       {tabOptions.map((tab, index) => (
         <TouchableDivider
           key={index}
