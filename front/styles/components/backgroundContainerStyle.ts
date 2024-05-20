@@ -9,7 +9,8 @@ export const backgroundContainerStyle = StyleSheet.create({
     flex: 1,
   },
   viewContainer: {
+    flex: 1,
     width: '100%',
-    paddingLeft: 30,
+    justifyContent: 'center',
   },
 });

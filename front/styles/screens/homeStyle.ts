@@ -9,11 +9,11 @@ const { yellow, white } = COLORS;
 const { fontTitleHome, fontTitle, fontButton, borderRadius } = SIZES;
 
 export const homeStyle = StyleSheet.create({
-  bgImage: {
+  backgroundContainerImage: {
     justifyContent: 'center',
     alignItems: 'center',
+    paddingLeft: 30,
   },
-  titleContainer: {},
   title: {
     fontFamily: RobotoBold,
     fontSize: fontTitleHome,

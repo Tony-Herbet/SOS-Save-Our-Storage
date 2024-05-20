@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from 'react-native-screens/native-stack';
 import { RouteParams } from 'navigation/types';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useAppDispatch, useAppSelector } from 'redux/hooks';
 
 import BackgroundContainer from 'components/BackgroundContainer';
@@ -11,7 +11,7 @@ import { homeFormStyle as styles } from 'styles/screens/homeFormStyle';
 import { setEmail, setPassword, setIsPasswordHidden, resetForm } from 'redux/reducers/connection';
 import Eyes from 'components/SVG/Eyes';
 
-const { CONNEXION } = PATH;
+const { CONNECTION, STORAGELIST } = PATH;
 const {
   title,
   subtitle,
@@ -19,7 +19,7 @@ const {
   button,
   textBtn,
   textGobackBtn,
-  bgImage,
+  backgroundContainerImage,
   buttonContainer,
   form,
   gobackButton,
@@ -29,7 +29,7 @@ const {
   eyesIcon,
 } = styles;
 
-const Connexion: FunctionComponent = () => {
+const Connection: FunctionComponent = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
 
   const dispatch = useAppDispatch();
@@ -40,8 +40,16 @@ const Connexion: FunctionComponent = () => {
     navigation.goBack();
   };
 
+  const handleConnection = () => {
+    navigation.navigate(STORAGELIST);
+    navigation.reset({
+      index: 0,
+      routes: [{ name: STORAGELIST }], // Replace once done
+    });
+  };
+
   return (
-    <BackgroundContainer location={CONNEXION} imageStyles={bgImage}>
+    <BackgroundContainer location={CONNECTION} backgroundContainerImageStyles={backgroundContainerImage}>
       <View>
         <Text style={title}>S.O.S.</Text>
         <Text style={subtitle}>"Save Our Storage"</Text>
@@ -77,7 +85,7 @@ const Connexion: FunctionComponent = () => {
       </View>
 
       <View style={buttonContainer}>
-        <TouchableOpacity style={button}>
+        <TouchableOpacity style={button} onPress={handleConnection}>
           <Text style={textBtn}>Me connecter</Text>
         </TouchableOpacity>
         <TouchableOpacity style={gobackButton} onPress={handleBack}>
@@ -88,4 +96,4 @@ const Connexion: FunctionComponent = () => {
   );
 };
 
-export default Connexion;
+export default Connection;

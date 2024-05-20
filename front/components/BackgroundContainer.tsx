@@ -6,32 +6,35 @@ import { PATH } from 'constants/Enums';
 
 interface BackgroundContainerProps {
   children: ReactNode;
-  viewStyles?: ViewStyle;
-  imageStyles?: ImageStyle;
+  backgroundContainerViewStyles?: ViewStyle;
+  backgroundContainerImageStyles?: ImageStyle;
   location?: string;
 }
 
-const { HOME, CONNEXION } = PATH;
+const { HOME, CONNECTION, INSCRIPTION } = PATH;
+const { container, image, viewContainer } = styles;
 
 const BackgroundContainer: FunctionComponent<BackgroundContainerProps> = ({
   children,
-  viewStyles,
-  imageStyles,
+  backgroundContainerViewStyles,
+  backgroundContainerImageStyles,
   location,
 }) => (
-  <View style={{ ...styles.container, ...viewStyles }}>
+  <View style={{ ...container, ...backgroundContainerViewStyles }}>
     <ImageBackground
-      style={{ ...styles.image, ...imageStyles }}
+      style={{ ...image, ...backgroundContainerImageStyles }}
       source={
         location === HOME
           ? require('../assets/images/background-home-bags.webp')
-          : location === CONNEXION
+          : location === CONNECTION
             ? require('../assets/images/background-home.webp')
-            : require('../assets/images/background.webp')
+            : location === INSCRIPTION
+              ? require('../assets/images/background-home.webp')
+              : require('../assets/images/background.webp')
       }
       resizeMode="stretch" // to work, resizeMode should be here and not in StyleSheet
     >
-      <View style={styles.viewContainer}>{children}</View>
+      <View style={viewContainer}>{children}</View>
     </ImageBackground>
   </View>
 );

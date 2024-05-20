@@ -4,6 +4,9 @@ export const SIZES = {
   fontSubtitle: 20,
   fontButton: 17,
   fontText: 15,
+  fontDivider: 12,
+  fontDividerGoBack: 35,
+  lineHeightText: 20,
 
   borderRadius: 50,
 };
