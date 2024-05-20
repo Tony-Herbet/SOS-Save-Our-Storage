@@ -7,9 +7,9 @@ import Home from 'screens/Home';
 import Connection from 'screens/Connection';
 import Inscription from 'screens/Inscription';
 import StorageList from 'screens/StorageList';
-import AddStorage from 'screens/AddStorage';
+import Storage from 'screens/Storage';
 
-const { INSCRIPTION, STORAGELIST, ADDSTORAGE } = PATH;
+const { CONNECTION, INSCRIPTION, STORAGELIST, STORAGE } = PATH;
 
 interface RootNavigator {
   initialRoute: keyof RouteParams;
@@ -27,13 +27,13 @@ export const RootNavigator: FunctionComponent<RootNavigator> = ({ initialRoute }
     >
       <Stack.Group>
         <Stack.Screen name={initialRoute} component={Home} />
-        <Stack.Screen name={PATH.CONNECTION} component={Connection} />
+        <Stack.Screen name={CONNECTION} component={Connection} />
         <Stack.Screen name={INSCRIPTION} component={Inscription} />
       </Stack.Group>
 
       <Stack.Group>
         <Stack.Screen name={STORAGELIST} component={StorageList} />
-        <Stack.Screen name={ADDSTORAGE} component={AddStorage} />
+        <Stack.Screen name={STORAGE} component={Storage} />
       </Stack.Group>
     </Stack.Navigator>
   );

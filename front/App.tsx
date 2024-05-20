@@ -8,11 +8,12 @@ import { RouteParams } from 'navigation/types';
 import { RootNavigator } from 'navigation/RootNavigator';
 import { Provider } from 'react-redux';
 import store from 'redux/store';
+import { PATH } from 'constants/Enums';
 
 SplashScreen.preventAutoHideAsync();
 
 const App: FunctionComponent = () => {
-  const initialRoute: keyof RouteParams = 'HOME';
+  const initialRoute: keyof RouteParams = PATH.HOME;
 
   // fonts import and declaration
   const [fontsLoaded, fontError] = useFonts({

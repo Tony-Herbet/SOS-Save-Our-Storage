@@ -9,10 +9,9 @@ import { RouteParams } from 'navigation/types';
 import { COLORS } from 'constants/Colors';
 import { PATH } from 'constants/Enums';
 import { SIZES } from 'constants/Sizes';
-import { FONTS } from 'constants/Fonts';
 
 const { yellow, green, red, blue, pink, purple, orange } = COLORS;
-const { GOBACK, STORAGELIST } = PATH;
+const { GOBACK, STORAGE } = PATH;
 const { fontDivider, fontDividerGoBack } = SIZES;
 const { touchableStyle, dividerTextStyle, textContainerStyle } = styles;
 
@@ -22,7 +21,7 @@ const NavContainer: FunctionComponent<NavContainerProps> = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
   const route = useRoute();
 
-  const storageName = route.name === STORAGELIST ? 'Rangements' : GOBACK; // TODO change for the route.name screen for one storage
+  const storageName = route.name === STORAGE ? GOBACK : 'Rangements';
 
   const tabOptions: Array<{ name: string; color: string }> = [
     { name: storageName, color: yellow },
@@ -47,7 +46,6 @@ const NavContainer: FunctionComponent<NavContainerProps> = () => {
         <TouchableDivider
           key={index}
           handleOnPress={() => {
-            console.log(route.name);
             // This is to prevent an error when the actual screen is the first one
             if (navigation.canGoBack()) {
               navigation.goBack();
@@ -55,7 +53,7 @@ const NavContainer: FunctionComponent<NavContainerProps> = () => {
           }}
           touchableStyle={touchableStyle}
           dividerColor={tab.color}
-          dividerText={tab.name === GOBACK ? '↶' : tab.name}
+          dividerText={tab.name}
           dividerTextStyle={{
             ...dividerTextStyle,
             marginTop: tab.name === GOBACK ? 35 : 25,

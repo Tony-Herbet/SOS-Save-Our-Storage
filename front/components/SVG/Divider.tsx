@@ -1,9 +1,12 @@
 import { FunctionComponent } from 'react';
 import { Text, View, TextStyle, ViewStyle } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
-import { dividerStyle as styles } from 'styles/components/SVG/dividerStyle';
 
-const { textContainerCommonStyle, textCommonStyle } = styles;
+import { dividerStyle as styles } from 'styles/components/SVG/dividerStyle';
+import { PATH } from 'constants/Enums';
+import Arrow from 'components/SVG/Arrow';
+
+const { textContainerCommonStyle } = styles;
 
 interface DividerProps {
   dividerColor: string;
@@ -18,7 +21,6 @@ const Divider: FunctionComponent<DividerProps> = ({
   dividerColor,
   dividerText,
   dividerTextStyle,
-  textContainerStyle,
   dividerType,
   svgWidth = 120,
 }) => {
@@ -31,8 +33,14 @@ const Divider: FunctionComponent<DividerProps> = ({
     <Svg width={svgWidth} height={100} viewBox="0 0 936.75 489.75">
       {dividerType === 'full' && <Path fill={dividerColor} d={d} />}
       {dividerType === 'half' && <Path fill={dividerColor} d={d} />}
-      <View style={{ ...textContainerCommonStyle, ...textContainerStyle }}>
-        <Text style={{ ...textCommonStyle, ...dividerTextStyle }}>{dividerText}</Text>
+      <View style={textContainerCommonStyle}>
+        {dividerText === PATH.GOBACK ? (
+          <View style={dividerTextStyle}>
+            <Arrow />
+          </View>
+        ) : (
+          <Text style={dividerTextStyle}>{dividerText}</Text>
+        )}
       </View>
     </Svg>
   );
