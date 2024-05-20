@@ -1,11 +1,16 @@
 import { StyleSheet } from 'react-native';
 
 import { FONTS } from '../../constants/Fonts';
-import { SIZES } from 'constants/Sizes';
 
 const { RalewayBold } = FONTS;
 
 export const navContainerStyle = StyleSheet.create({
+  navContainer: {
+    height: 700,
+    position: 'absolute',
+    right: -82,
+    top: -10,
+  },
   touchableStyle: {
     transform: [{ rotate: '-90deg' }],
     alignItems: 'center',
