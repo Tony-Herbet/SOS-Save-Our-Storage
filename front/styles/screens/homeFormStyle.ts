@@ -12,7 +12,6 @@ export const homeFormStyle = StyleSheet.create({
   backgroundContainerImage: {
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
     paddingLeft: 30,
   },
   title: {
