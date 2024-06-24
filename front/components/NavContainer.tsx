@@ -49,12 +49,12 @@ const NavContainer: FunctionComponent<NavContainerProps> = () => {
           dividerText={tab.name}
           dividerTextStyle={{
             ...dividerTextStyle,
-            marginTop: tab.name === GOBACK ? 35 : 25,
+            marginTop: tab.name === GOBACK ? 35 : 20,
             fontSize: tab.name === GOBACK ? fontDividerGoBack : fontDivider,
           }}
           textContainerStyle={textContainerStyle}
           dividerType={index === 0 ? 'full' : 'half'}
-          svgWidth={index === 0 ? 110 : 90}
+          svgWidth={index === 0 ? 90 : 70}
         />
       ))}
     </View>

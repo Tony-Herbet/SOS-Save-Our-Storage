@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { FONTS } from '../../constants/Fonts';
-import { SIZES } from '../../constants/Sizes';
+import { FONTS } from 'constants/Fonts';
+import { SIZES } from 'constants/Sizes';
+import { paddingRightSize } from 'constants/Layouts';
 
 const { RobotoBold } = FONTS;
 const { fontTitle, fontSubtitle } = SIZES;
@@ -11,7 +12,7 @@ export const screenContainerStyle = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 50,
     paddingLeft: 55,
-    paddingRight: 70,
+    paddingRight: paddingRightSize,
     justifyContent: 'space-between',
     position: 'relative',
   },
@@ -19,7 +20,7 @@ export const screenContainerStyle = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     height: '10%',
-    marginBottom: 15
+    marginBottom: 15,
   },
   styleTitle: {
     fontFamily: RobotoBold,
