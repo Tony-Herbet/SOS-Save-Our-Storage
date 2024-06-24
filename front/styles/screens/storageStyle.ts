@@ -23,7 +23,6 @@ export const storageStyle = StyleSheet.create({
     bottom: 3,
     left: 0,
   },
-  touchableStyle: {},
   dividerTextStyle: {
     width: '70%',
     height: 'auto',

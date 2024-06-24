@@ -1,9 +1,17 @@
 import { FunctionComponent, useCallback } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import { StatusBar as StatusBarExpo } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_500Medium,
+  Roboto_700Bold,
+  Raleway_400Regular,
+  Raleway_500Medium,
+  Raleway_700Bold,
+} from '@expo-google-fonts/dev';
 
 import { RouteParams } from 'navigation/types';
 import { RootNavigator } from 'navigation/RootNavigator';
@@ -17,23 +25,23 @@ SplashScreen.preventAutoHideAsync();
 const App: FunctionComponent = () => {
   const initialRoute: keyof RouteParams = PATH.HOME;
 
-  // fonts import and declaration
-  const [fontsLoaded, fontError] = useFonts({
-    'Raleway-Regular': require('assets/fonts/Raleway/Raleway-Regular.ttf'),
-    'Raleway-Medium': require('assets/fonts/Raleway/Raleway-Medium.ttf'),
-    'Raleway-Bold': require('assets/fonts/Raleway/Raleway-Bold.ttf'),
-    'Roboto-Regular': require('assets/fonts/Roboto/Roboto-Regular.ttf'), // only titles
-    'Roboto-Medium': require('assets/fonts/Roboto/Roboto-Medium.ttf'),
-    'Roboto-Bold': require('assets/fonts/Roboto/Roboto-Bold.ttf'),
+  const [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_500Medium,
+    Roboto_700Bold,
+    Raleway_400Regular,
+    Raleway_500Medium,
+    Raleway_700Bold,
   });
 
   const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded || fontError) {
+    if (fontsLoaded) {
       await SplashScreen.hideAsync();
     }
-  }, [fontsLoaded, fontError]);
+  }, [fontsLoaded]);
 
-  if (!fontsLoaded && !fontError) {
+  if (!fontsLoaded) {
+    // TODO use a Loader instead?
     return null;
   }
 
