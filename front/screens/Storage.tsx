@@ -14,7 +14,7 @@ import ModalComponent from 'components/Modals/ModalComponent';
 import Spacer from 'components/SVG/Spacer';
 import { setProduct, setIsAddProductModalOpen, setIsEditProductModalOpen, resetProduct } from 'redux/reducers/product';
 
-const { viewContainer, touchableStyle, dividerTextStyle, textContainerStyle, touchableContainer } = styles;
+const { viewContainer, dividerTextStyle, textContainerStyle, touchableContainer } = styles;
 const { STORAGE } = PATH;
 const { ADD_UNDERSTORAGE, ADD_PRODUCT, EDIT_PRODUCT } = TITLE;
 const { yellow } = COLORS;
@@ -267,7 +267,7 @@ const Storage: FunctionComponent<StorageScreenProps> = ({ route }) => {
           dividerText="Ajouter un sous rangement"
           dividerTextStyle={dividerTextStyle}
           handleOnPress={() => dispatch(setIsUnderStorageModalOpen(true))}
-          touchableStyle={touchableStyle}
+          touchableStyle={{}}
           textContainerStyle={textContainerStyle}
           dividerType="full"
         />
@@ -277,7 +277,7 @@ const Storage: FunctionComponent<StorageScreenProps> = ({ route }) => {
           dividerText="Ajouter un produit"
           dividerTextStyle={dividerTextStyle}
           handleOnPress={() => dispatch(setIsAddProductModalOpen(true))}
-          touchableStyle={touchableStyle}
+          touchableStyle={{}}
           textContainerStyle={textContainerStyle}
           dividerType="full"
         />
