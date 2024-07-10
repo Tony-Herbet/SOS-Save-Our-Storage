@@ -21,6 +21,7 @@ const NavContainer: FunctionComponent<NavContainerProps> = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
   const route = useRoute();
 
+  // TODO Find a better solution.
   const storageName = route.name === STORAGE ? GOBACK : 'Rangements';
   const storagePath = route.name === STORAGE ? GOBACK : STORAGELIST;
 
@@ -43,6 +44,8 @@ const NavContainer: FunctionComponent<NavContainerProps> = () => {
         <TouchableDivider
           key={index}
           handleOnPress={() => {
+            console.log(route.name);
+
             // Using a switch so TS can infer the type of tab.path which it can't with an if-else statement
             switch (tab.path) {
               case GOBACK:
@@ -76,7 +79,9 @@ const NavContainer: FunctionComponent<NavContainerProps> = () => {
             fontSize: tab.name === GOBACK ? fontDividerGoBack : fontDivider,
           }}
           textContainerStyle={textContainerStyle}
-          dividerType={tab.path === route.name ? 'full' : 'half'}
+          dividerType={
+            tab.path === route.name ? 'full' : 'half' /* TODO Fix goback arrow not full, changing the path */
+          }
           svgWidth={tab.path === route.name ? 90 : 70}
         />
       ))}

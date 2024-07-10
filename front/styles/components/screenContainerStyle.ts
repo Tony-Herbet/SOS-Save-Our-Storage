@@ -19,7 +19,7 @@ export const screenContainerStyle = StyleSheet.create({
   titleStyleContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: '10%',
+    height: '10%', // TODO read TODO for childrenContainerStyle
     marginBottom: 15,
   },
   styleTitle: {
@@ -31,6 +31,6 @@ export const screenContainerStyle = StyleSheet.create({
     fontSize: fontSubtitle,
   },
   childrenContainerStyle: {
-    marginTop: 18,
+    marginTop: 18, // TODO remove? add a props to ScreenContainer for the children container style? Both marginTop and height from titleStyleContainer create a big gap between the title and the content when there is no subtitle. We could even reduce this gap when there is a subtitle.
   },
 });
