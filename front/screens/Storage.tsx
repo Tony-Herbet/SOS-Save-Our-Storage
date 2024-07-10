@@ -187,7 +187,7 @@ const Storage: FunctionComponent<StorageScreenProps> = ({ route }) => {
         <View style={{ flexDirection: 'row' }}>
           <Text style={{ flex: 4, fontWeight: 'bold' }}>Produits</Text>
           <Text style={{ flex: 1, fontWeight: 'bold' }}>Nb</Text>
-          <Text style={{ flex: 2, fontWeight: 'bold' }}>Date</Text>
+          <Text style={{ flex: 2, fontWeight: 'bold' }}>Dates</Text>
         </View>
         {/* //&--------------------------------- TABLE BODY --------------------------------- */}
         <View style={{ height: '85%' }}>

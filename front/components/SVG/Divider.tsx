@@ -34,7 +34,7 @@ const Divider: FunctionComponent<DividerProps> = ({
       {dividerType === 'full' && <Path fill={dividerColor} d={d} />}
       {dividerType === 'half' && <Path fill={dividerColor} d={d} />}
       <View style={textContainerCommonStyle}>
-        {dividerText === PATH.GOBACK ? (
+        {dividerText === PATH.STORAGE ? (
           <View style={dividerTextStyle}>
             <Arrow />
           </View>
