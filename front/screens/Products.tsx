@@ -174,7 +174,7 @@ const Products: FunctionComponent = () => {
   ];
 
   return (
-    <ScreenContainer title="Maison du Lac">
+    <ScreenContainer title="Maison du Lac" subtitle="Emplacement des produits">
       <ProductsAndDatesContent data={ProductsData} usedIn="Products" />
     </ScreenContainer>
   );

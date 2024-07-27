@@ -10,7 +10,7 @@ const Profile: FunctionComponent = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
 
   return (
-    <ScreenContainer title="Mon Profil">
+    <ScreenContainer title="Mon Profil" subtitle="Détails de mon profil">
       <View>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text>Temporary go back button</Text>

@@ -185,12 +185,12 @@ const Storage: FunctionComponent<StorageScreenProps> = ({ route }) => {
       <View style={viewContainer}>
         {/* //&--------------------------------- TABLE HEAD --------------------------------- */}
         <View style={{ flexDirection: 'row' }}>
-          <Text style={{ flex: 4, fontWeight: 'bold' }}>Produits</Text>
-          <Text style={{ flex: 1, fontWeight: 'bold' }}>Nb</Text>
-          <Text style={{ flex: 2, fontWeight: 'bold' }}>Dates</Text>
+          <Text style={{ flex: 4, fontWeight: 'bold', marginBottom: 8 }}>Produits</Text>
+          <Text style={{ flex: 1, fontWeight: 'bold', marginBottom: 8 }}>Nb</Text>
+          <Text style={{ flex: 2, fontWeight: 'bold', marginBottom: 8 }}>Dates</Text>
         </View>
         {/* //&--------------------------------- TABLE BODY --------------------------------- */}
-        <View style={{ height: '85%' }}>
+        <View style={{ height: '80%' }}>
           <ScrollView style={{ flex: 1 }}>
             {/* // TODO change type when the dtb is done */}
             {StorageData.map((underStorage, index) => (
@@ -202,22 +202,38 @@ const Storage: FunctionComponent<StorageScreenProps> = ({ route }) => {
                 <View style={{ flex: 1, flexDirection: 'row' }}>
                   <View style={{ flex: 4 }}>
                     {underStorage.products.map((product: any, index) => (
-                      <Text key={'name' + index} numberOfLines={1} onPress={() => handleEditProductPress(product)}>
+                      <Text
+                        style={{ lineHeight: 28 }}
+                        key={'name' + index}
+                        numberOfLines={1}
+                        onPress={() => handleEditProductPress(product)}
+                      >
                         {product.name}
                       </Text>
                     ))}
                   </View>
                   <View style={{ flex: 1 }}>
                     {underStorage.products.map((product: any, index) => (
-                      <Text key={'quantity' + index} numberOfLines={1} onPress={() => handleEditProductPress(product)}>
+                      <Text
+                        style={{ lineHeight: 28 }}
+                        key={'quantity' + index}
+                        numberOfLines={1}
+                        onPress={() => handleEditProductPress(product)}
+                      >
                         x{product.quantity}
                       </Text>
                     ))}
                   </View>
                   <View style={{ flex: 2 }}>
                     {underStorage.products.map((product: any, index) => (
-                      <Text key={'date' + index} numberOfLines={1} onPress={() => handleEditProductPress(product)}>
-                        {product.date}
+                      <Text
+                        style={{ lineHeight: 28 }}
+                        key={'date' + index}
+                        numberOfLines={1}
+                        onPress={() => handleEditProductPress(product)}
+                      >
+                        {/* replace with space when there is no date to keep the table aligned */}
+                        {(product.date ??= ' ')}
                       </Text>
                     ))}
                   </View>

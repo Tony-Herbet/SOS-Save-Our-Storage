@@ -177,7 +177,7 @@ const Dates: FunctionComponent = () => {
   ];
 
   return (
-    <ScreenContainer title="Maison du Lac">
+    <ScreenContainer title="Maison du Lac" subtitle="Dates des produits">
       <ProductsAndDatesContent data={ProductsData} usedIn="Dates" productsColumnFlex={productsColumnFlex} />
     </ScreenContainer>
   );

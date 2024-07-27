@@ -6,7 +6,6 @@ import { screenHeight, screenWidth, rightColumnSize, paddingRightSize, MediaQuer
 const { RalewayBold } = FONTS;
 
 const getRightValue = () => {
-  console.log(screenWidth);
   if (MediaQueries.isVeryBigWidth) return -1; // iPhone 12,13,14,15 Pro Max
   if (MediaQueries.isBigWidth) return -3; // iPhone 11,Xr, Nexus 5X
   if (MediaQueries.isMediumWidth) return -6; // iPhone 12,13,14,15, iPhone 12,13,15 Pro, Pixel 3,4,5

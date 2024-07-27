@@ -27,7 +27,7 @@ const StorageList: FunctionComponent = () => {
   const { name, isModalOpen } = useAppSelector((state) => state.storage.addStorage);
 
   return (
-    <ScreenContainer title="Maison du Lac">
+    <ScreenContainer title="Maison du Lac" subtitle="Liste des rangements">
       <View style={viewContainer}>
         {Storages.map((name, index) => (
           <TouchableOpacity
