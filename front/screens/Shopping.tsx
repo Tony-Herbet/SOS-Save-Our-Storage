@@ -10,7 +10,7 @@ const Shopping: FunctionComponent = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
 
   return (
-    <ScreenContainer title="Maison du lac">
+    <ScreenContainer title="Maison du lac" subtitle="Liste de mes courses">
       <View>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text>Temporary go back button</Text>

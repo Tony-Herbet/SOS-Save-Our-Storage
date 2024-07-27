@@ -4,7 +4,7 @@ import { FONTS } from '../../constants/Fonts';
 import { SIZES } from 'constants/Sizes';
 
 const { fontText, lineHeightText, fontDivider } = SIZES;
-const { RobotoBold, RalewayMedium, RalewayBold } = FONTS;
+const { RalewayBold } = FONTS;
 
 export const storageStyle = StyleSheet.create({
   viewContainer: {

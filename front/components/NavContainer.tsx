@@ -11,7 +11,7 @@ import { PATH } from 'constants/Enums';
 import { SIZES } from 'constants/Sizes';
 
 const { yellow, green, red, blue, pink, purple, orange } = COLORS;
-const { GOBACK, STORAGELIST, STORAGE, PRODUCTS, DATES, SHOPPING, RESIDENCES, MEMBERS, PROFILE } = PATH;
+const { STORAGELIST, STORAGE, PRODUCTS, DATES, SHOPPING, RESIDENCES, MEMBERS, PROFILE } = PATH;
 const { fontDivider, fontDividerGoBack } = SIZES;
 const { navContainer, touchableStyle, dividerTextStyle, textContainerStyle } = styles;
 
@@ -21,8 +21,8 @@ const NavContainer: FunctionComponent<NavContainerProps> = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
   const route = useRoute();
 
-  const storageName = route.name === STORAGE ? GOBACK : 'Rangements';
-  const storagePath = route.name === STORAGE ? GOBACK : STORAGELIST;
+  const storageName = route.name === STORAGE ? STORAGE : 'Rangements';
+  const storagePath = route.name === STORAGE ? STORAGE : STORAGELIST;
 
   const tabOptions: Array<{ name: string; color: string; path: PATH }> = [
     // name is the text display inside the divider
@@ -45,7 +45,7 @@ const NavContainer: FunctionComponent<NavContainerProps> = () => {
           handleOnPress={() => {
             // Using a switch so TS can infer the type of tab.path which it can't with an if-else statement
             switch (tab.path) {
-              case GOBACK:
+              case STORAGE:
                 // This is to prevent an error when the actual screen is the first one
                 if (navigation.canGoBack()) {
                   navigation.goBack();
@@ -72,8 +72,8 @@ const NavContainer: FunctionComponent<NavContainerProps> = () => {
           dividerText={tab.name}
           dividerTextStyle={{
             ...dividerTextStyle,
-            marginTop: tab.name === GOBACK ? 35 : 20,
-            fontSize: tab.name === GOBACK ? fontDividerGoBack : fontDivider,
+            marginTop: tab.name === STORAGE ? 35 : 20,
+            fontSize: tab.name === STORAGE ? fontDividerGoBack : fontDivider,
           }}
           textContainerStyle={textContainerStyle}
           dividerType={tab.path === route.name ? 'full' : 'half'}

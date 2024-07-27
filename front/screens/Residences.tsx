@@ -10,7 +10,7 @@ const Residences: FunctionComponent = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
 
   return (
-    <ScreenContainer title="Mes Foyers">
+    <ScreenContainer title="Mes Foyers" subtitle="Liste de mes foyers">
       <View>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text>Temporary go back button</Text>

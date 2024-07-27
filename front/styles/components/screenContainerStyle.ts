@@ -19,18 +19,20 @@ export const screenContainerStyle = StyleSheet.create({
   titleStyleContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: '10%',
-    marginBottom: 15,
   },
   styleTitle: {
     fontFamily: RobotoBold,
     fontSize: fontTitle,
     marginBottom: 10,
+    height: 30,
   },
   styleSubtitle: {
     fontSize: fontSubtitle,
+    textAlign: 'center',
+    height: 25,
   },
   childrenContainerStyle: {
-    marginTop: 18,
+    marginTop: 15,
+    height: '90%',
   },
 });
